@@ -10,9 +10,6 @@ export class AppComponent {
   name = 'Angular';
 
 
-  constructor(private db: AngularFirestore) {
-    console.log("NABO");
-    db.collection("test").add({abc:123, "dummy":"dummy"});
-    
+  constructor() {
   }
 }
