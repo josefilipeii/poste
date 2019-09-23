@@ -10,6 +10,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthService } from './auth.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 const config = {
@@ -24,9 +26,11 @@ const config = {
 @NgModule({
   imports:      [ BrowserModule, FormsModule , 
   AngularFireModule.initializeApp(config),
-  AngularFirestoreModule
+  AngularFirestoreModule,
+  AngularFireAuthModule
     ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ AppComponent, HelloComponent, UserProfileComponent ],
+  bootstrap:    [ AppComponent ],
+  providers: [AuthService]
 })
 export class AppModule { }
