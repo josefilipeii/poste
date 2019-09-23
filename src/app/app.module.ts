@@ -12,6 +12,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './auth.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import {RouterModule} from "@angular/router";
+import {RoutingModule} from "./router/routing.module";
 
 
 const config = {
@@ -27,7 +29,7 @@ const config = {
   imports:      [ BrowserModule, FormsModule , 
   AngularFireModule.initializeApp(config),
   AngularFirestoreModule,
-  AngularFireAuthModule
+  AngularFireAuthModule, RoutingModule
     ],
   declarations: [ AppComponent, HelloComponent, UserProfileComponent ],
   bootstrap:    [ AppComponent ],
