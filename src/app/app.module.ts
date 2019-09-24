@@ -16,6 +16,8 @@ import {RouterModule} from "@angular/router";
 import {RoutingModule} from "./router/routing.module";
 import {SharedModule} from "./shared/shared.module";
 import { NavbarComponent } from './navbar/navbar.component';
+import { GuestComponent } from './guest/guest.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -36,7 +38,7 @@ const config = {
         AngularFireAuthModule, RoutingModule,
         SharedModule
     ],
-    declarations: [AppComponent, HelloComponent, UserProfileComponent, NavbarComponent],
+    declarations: [AppComponent, HelloComponent, UserProfileComponent, NavbarComponent, GuestComponent, HomeComponent],
     bootstrap: [AppComponent],
     providers: [AuthService]
 })
