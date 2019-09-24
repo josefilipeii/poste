@@ -15,7 +15,7 @@ import {UserProfileComponent} from './user-profile/user-profile.component';
 import {RouterModule} from "@angular/router";
 import {RoutingModule} from "./router/routing.module";
 import {SharedModule} from "./shared/shared.module";
-import { NavbarComponent } from './navbar/navbar.component';
+import {NavbarComponent} from './navbar/navbar.component';
 import { GuestComponent } from './guest/guest.component';
 import { HomeComponent } from './home/home.component';
 

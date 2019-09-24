@@ -2,17 +2,52 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {
-    MatCardModule,
-    MatInputModule,
     MatButtonModule,
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatChipsModule,
+    MatOptionModule,
+    MatGridListModule,
+    MatProgressBarModule,
+    MatSliderModule,
+    MatSlideToggleModule,
     MatMenuModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatSelectModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatIconModule,
+    MatRadioModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatListModule
 } from '@angular/material';
 
 const modules = [
-    MatCardModule,
-    MatInputModule,
+    BrowserAnimationsModule,
     MatButtonModule,
-    MatMenuModule, BrowserAnimationsModule
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatChipsModule,
+    MatOptionModule,
+    MatGridListModule,
+    MatProgressBarModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatSelectModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatIconModule,
+    MatRadioModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatListModule
 
 ];
 
