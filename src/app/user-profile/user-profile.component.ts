@@ -11,7 +11,7 @@ import {User} from "../model/user";
 })
 export class UserProfileComponent implements OnInit {
 
-  private users: Observable<User[]>;
+  users: Observable<User[]>;
 
   constructor(public userService: UsersService) { }
 
