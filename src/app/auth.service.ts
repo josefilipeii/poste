@@ -48,11 +48,11 @@ export class AuthService {
             uid: user.uid,
             email: user.email,
             displayName: user.displayName,
-            photoURL: user.photoURL
-        }
-        return userRef.set(data, {merge: true}).then(value => {
+            photoURL: user.photoURL,
+            postes:[]}
+
+        return userRef.set(data, {merge: true}).then(() => {
             this.router.navigate(['home']);
-            return value;
         })
     }
 

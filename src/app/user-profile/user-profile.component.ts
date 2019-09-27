@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from "rxjs";
+
+import {UsersService} from "../users/users.service";
+import {User} from "../model/user";
 
 @Component({
   selector: 'app-user-profile',
@@ -8,9 +11,12 @@ import { AuthService } from '../auth.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  private users: Observable<User[]>;
+
+  constructor(public userService: UsersService) { }
 
   ngOnInit() {
+    this.users = this.userService.list().valueChanges();
   }
 
 }

@@ -1,6 +1,17 @@
-<div *ngIf="auth.user$ | async as user">
-    <h3>Howdy, {{ user.displayName }}</h3>
-    <img  [src]="user.photoURL">
-    <button (click)="auth.signOut()">Logout</button>
+<div *ngFor="let user of users | async">
+    <mat-card class="resume-card">
+        <mat-card-header>
+            <div mat-card-avatar class="header-image"
+                 [ngStyle]="{'background-image': 'url('+ user.photoURL+')'}"></div>
+            <mat-card-title> {{ user.displayName }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                Rate Wannabe
+            </p>
+        </mat-card-content>
+    </mat-card>
+
+
 </div>
 

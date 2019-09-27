@@ -1,7 +1,9 @@
+import {Poste} from "./poste";
+
 export interface User {
-   uid: string;
-  email: string;
-  photoURL?: string;
-  displayName?: string;
-  myCustomData?: string;
+    uid: string;
+    email?: string;
+    photoURL?: string;
+    displayName?: string;
+    myCustomData?: string;
 }
