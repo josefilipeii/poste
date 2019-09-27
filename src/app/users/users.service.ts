@@ -20,7 +20,7 @@ export class UsersService {
 
 
     update(user: User): Promise<void> {
-        return this.afs.doc<User>(`users/${user.uid}`).update(user);
+        return this.afs.doc<User>(`users/${user.uid}`).set(user, {merge: true});
     }
 
 

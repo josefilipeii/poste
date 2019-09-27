@@ -8,6 +8,7 @@ import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestor
 
 import {Observable, of} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
+import {UsersService} from "./users/users.service";
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
@@ -17,13 +18,14 @@ export class AuthService {
     constructor(
         private afAuth: AngularFireAuth,
         private afs: AngularFirestore,
-        private router: Router
+        private router: Router,
+        private userService: UsersService
     ) {
         this.user$ = this.afAuth.authState.pipe(
             switchMap(user => {
                 // Logged in
                 if (user) {
-                    return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+                    return this.userService.get(user.uid).valueChanges();
                 } else {
                     // Logged out
                     return of(null);
@@ -43,15 +45,16 @@ export class AuthService {
 
     private updateUserData(user) {
         // Sets user data to firestore on login
-        const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
         const data = {
             uid: user.uid,
             email: user.email,
             displayName: user.displayName,
             photoURL: user.photoURL,
-            postes:[]}
+            postes: []
+        }
 
-        return userRef.set(data, {merge: true}).then(() => {
+        this.userService.update(data)
+        return this.userService.update(user).then(() => {
             this.router.navigate(['home']);
         })
     }

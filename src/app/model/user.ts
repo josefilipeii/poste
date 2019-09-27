@@ -1,4 +1,5 @@
 import {Poste} from "./poste";
+import {DocumentReference} from "@angular/fire/firestore";
 
 export interface User {
     uid: string;
@@ -6,4 +7,14 @@ export interface User {
     photoURL?: string;
     displayName?: string;
     myCustomData?: string;
+    notifications?:string;
+}
+
+export interface Notifications {
+    referenceDoc: DocumentReference,
+    type:NotificationType;
+}
+
+export enum NotificationType{
+    ACCEPT_POSTE
 }
